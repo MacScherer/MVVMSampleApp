@@ -1,4 +1,4 @@
-package com.example.mvvmsampleapp;
+ package com.example.mvvmsampleapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
