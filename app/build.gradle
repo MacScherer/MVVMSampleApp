@@ -32,13 +32,16 @@ android {
 
 dependencies {
     def lifecycle_version = "2.5.0-alpha02"
-    def arch_version = "2.1.0"
     def room_version = "2.4.1"
 
+    //noinspection GradleDependency
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+    //noinspection GradleDependency
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    //noinspection GradleDependency
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    //noinspection LifecycleAnnotationProcessorWithJava8
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.cardview:cardview:1.0.0'
