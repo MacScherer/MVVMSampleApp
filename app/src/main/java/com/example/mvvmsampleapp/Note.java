@@ -5,7 +5,6 @@ import androidx.room.PrimaryKey;
 
 @Entity (tableName = "note_table") // defines name of table
 public class Note {
-
     @PrimaryKey (autoGenerate = true) // increment ID each new row editing ID column
     private int id;
     private String title;
@@ -40,5 +39,4 @@ public class Note {
     public int getPriority() {
         return priority;
     }
-
 }
