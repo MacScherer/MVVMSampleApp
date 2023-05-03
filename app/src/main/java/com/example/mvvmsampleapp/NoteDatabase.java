@@ -10,9 +10,9 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 @Database(entities = {Note.class}, version = 1) // new version number = fallbackToDestructiveMigration
-public abstract class NoteDatabase extends RoomDatabase {
+public abstract class NoteDatabase extends RoomDatabase { // NoteDatabase will recieve RoomDatabase tools
 
-    private static NoteDatabase instance;
+    private static NoteDatabase instance; // Only this instance(class with resources) on the app = singleton
 
     public abstract NoteDao noteDao();
     // synchronized is only operation at time
