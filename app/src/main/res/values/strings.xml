@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MVVM Sample App</string>
+    <string name="description">Description</string>
+    <string name="title">title</string>
+    <string name="priority">Priority:</string>
+    <string name="save">Save</string>
 </resources>
