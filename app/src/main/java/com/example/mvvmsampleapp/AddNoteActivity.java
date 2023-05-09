@@ -36,32 +36,23 @@ public class AddNoteActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("Add note");
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.add_note_menu, menu);
         return true;
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //switch (item.getItemId()) {
-            //case R.id.save_note:
+        //case R.id.save_note:
         if (item.getItemId()==R.id.save_note){
             saveNote();
             return true;
         }else{
             return super.onOptionsItemSelected(item);
         }
-
-
-            //default:
-
-        //}
     }
 
     private void saveNote() {

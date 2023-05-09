@@ -5,6 +5,10 @@
  import android.view.View;
  import android.widget.Toast;
 
+ import androidx.activity.result.ActivityResult;
+ import androidx.activity.result.ActivityResultCallback;
+ import androidx.activity.result.ActivityResultLauncher;
+ import androidx.activity.result.contract.ActivityResultContracts;
  import androidx.annotation.Nullable;
  import androidx.appcompat.app.AppCompatActivity;
  import androidx.lifecycle.Observer;
@@ -20,6 +24,15 @@
      public static final int  ADD_NOTE_REQUEST = 1;
     private NoteViewModel noteViewModel;
 
+    ActivityResultLauncher<Intent> startForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if (result != null && result.getResultCode() == RESULT_OK){
+                Toast.makeText(MainActivity.this, "feito", Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +43,9 @@
             @Override
             public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, AddNoteActivity.class);
-            startActivityForResult(intent, 1);
+            startForResult.launch(intent);
         }
     });
-
-
-
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
@@ -52,7 +62,6 @@
             }
         });
     }
-
 
      public void returnData(int requestCode, int resultCode, @Nullable Intent data) {
          super.onActivityResult(requestCode, resultCode, data);

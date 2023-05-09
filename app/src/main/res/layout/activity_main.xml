@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_add"
         android:layout_gravity="end|bottom"
-        android:layout_margin="32dp">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        android:layout_margin="32dp"
+        android:importantForAccessibility="no" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
